@@ -1,0 +1,7 @@
+{
+  "name": "sound-board",
+  "short_name": "sound-board",
+  "description": "this is a soundboard template",
+  "start_url": "/",
+  "display": "standalone"
+}

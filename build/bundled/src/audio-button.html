@@ -1,0 +1,24 @@
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-icons/av-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+
+
+</head><body><dom-module id="audio-button">
+  <template>
+    <style is="custom-style">
+      :host {
+        display: block;
+      }
+      .giant {
+        height: 75px;
+        width: 75px;
+        margin: auto;
+      }
+    </style>
+
+    <paper-icon-button class="giant" icon="av:play-circle-filled" on-tap="playSound"><audio id="play_button" src="../sounds/ian.m4a"></audio></paper-icon-button>
+  </template>
+
+  <script>Polymer({is:"audio-button",properties:{prop1:{type:String,value:"audio-button"},soundclip:{type:String,value:"ian"},soundclips:{type:Array,value:function(){return["ian","steviebtime","rainshine","callyourfaja","pip","pleasereturn","ian","steviebtime","rainshine","ian","steviebtime","rainshine","ian","steviebtime","rainshine"]}}},playSound:function(){this.$.play_button.src="../sounds/"+this.soundclips[this.soundclip]+".m4a",this.$.play_button.play()}});</script>
+</dom-module>
+</body></html>

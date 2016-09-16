@@ -1,0 +1,96 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
+<link rel="import" href="../../bower_components/paper-audio-player/paper-audio-player.html">
+<link rel="import" href="../audio-button.html">
+
+<dom-module id="sound-board-app">
+  <template>
+    <style include="app-grid-style">
+      :host {
+        display: block;
+        color: white;
+        font-style: Arial, sans-serif;
+        --app-grid-columns: 3;
+        --app-grid-item-height: 100px;
+      }
+
+      paper-audio-player {
+        width: 100%;
+        margin: 0;
+      }
+      ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+      }
+      .item-title {
+        padding: 0;
+        margin: auto;
+      }
+      div {
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+      }
+      .item {
+        background-color: blue;
+        background-image: url("../../images/steven.jpg");
+        background-size: 100%;
+        border:2px solid white;
+        padding: auto;
+        margin: auto;
+        -border-radius: 5px;
+        min-width: 100px;
+      }
+      app-header {
+        background-color: black;
+/*        --app-header-background-rear-layer: {
+          background-color: black;
+        };*/
+      }
+      audio-button {
+        margin: auto;
+      }
+    </style>
+    <app-header condenses reveals effects="waterfall">
+      <app-toolbar>
+        <!-- <paper-icon-button icon="menu"></paper-icon-button> -->
+        <div main-title>stevensounds</div>
+      </app-toolbar>
+    </app-header>
+
+      <ul class="app-grid">
+        <template is="dom-repeat" items="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]">
+          <li class="item" ><!--style="background-image: url(//lorempixel.com/800/800/nature/?i=[[item]]);">-->
+            <div class="item-title">
+            <!--   Button [[item]] -->
+<!--             <paper-audio-player src="../../sounds/halfabanana.mp3" title="SUE" color="#F05C38"></paper-audio-player></div> -->
+              <audio-button soundclip="[[item]]"></audio-button>
+            </div>
+          </li>
+        </template>
+      </ul>
+
+      
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'sound-board-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'sound-board-app',
+        }
+      }
+
+    });
+  </script>
+</dom-module>
